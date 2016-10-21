@@ -15,12 +15,12 @@ class Producao():
 #  [ S ] -> [ b ]
 #  [ A ] -> [ a ]
 #  [ B ] -> [ b ]
-#  [ B ] -> [ V ] 
+#  [ B ] -> [ V ]
 #
 
 
 def ler_gramatica(caminho_arquivo):
-	leitura_atual = ''   #controle o que está sendo lido (terminais, variaveis, etc)
+	leitura_atual = ''   #controle o que esta sendo lido (terminais, variaveis, etc)
 	terminais = []
 	variaveis = []
 	inicial = ''
@@ -28,9 +28,9 @@ def ler_gramatica(caminho_arquivo):
 
 	with open(caminho_arquivo) as arquivo:
 	   for linha in arquivo:
-	   		linha = linha.replace(' ', '') #remove espaços da linha
+	   		linha = linha.replace(' ', '') #remove espacos da linha
 	   		linha = linha.replace('\t', '') #remove TABS da linha
-	   		if not linha: # pula linha se ela é vazia
+	   		if not linha: # pula linha se ela eh vazia
 	   			continue
 
 	   		if linha.startswith( '#Terminais' ):  #leitura de terminais
@@ -48,7 +48,7 @@ def ler_gramatica(caminho_arquivo):
 
 	   		if leitura_atual is 'terminais':
 	   			linha = re.sub(re.compile("#.*?\n" ) ,"" , linha) # remove comentarios da linha
-	   			
+
 	   			linha = linha.replace('[', '').replace(']','')  # remove os []
 	   			terminal = linha
 	   			terminal = terminal.replace("\n", '')
@@ -78,7 +78,7 @@ def ler_gramatica(caminho_arquivo):
 
 	   			cadeias = itens[1]  #segunda parte da string
 	   			cadeias = cadeias.replace("\n", '')
-	   			regex = re.compile("\[(\w+)\]")   #monta regex pra pegar uma lista do que está entre []
+	   			regex = re.compile("\[(\w+)\]")   #monta regex pra pegar uma lista do que esta entre []
 	   			lista_cadeias = regex.findall(cadeias)   #aplica o regex
 
 	   			producao = Producao(variavel, lista_cadeias)  #cria a producao
@@ -86,8 +86,9 @@ def ler_gramatica(caminho_arquivo):
 
 	return [ terminais, variaveis, inicial, regras ]  #returna tudo num array simples
 
+nome_gramatica = input("Digite o nome do arquivo de gramatica: ")
 
-resultado_leitura = ler_gramatica("exemplo-gramatica.txt")
+resultado_leitura = ler_gramatica(nome_gramatica)
 
 terminais = resultado_leitura[0]
 variaveis = resultado_leitura[1]
