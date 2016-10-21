@@ -1,9 +1,9 @@
 # Definicao da classe
 class Producao():
 
-	def __init__(self, variavel, terminais):
+	def __init__(self, variavel, cadeia_simbolos):
 	        self.variavel = variavel
-	        self.terminais = terminais
+	        self.cadeia_simbolos = cadeia_simbolos
 
 # Fim da definicao da classe
 
@@ -19,39 +19,39 @@ class Producao():
 lista_producoes = []
 
 variavel = 'S'
-terminais = []
-terminais.append('A')
-terminais.append('B')
-terminais.append('a')
-producao = Producao(variavel, terminais) #cria a producao
+cadeia_simbolos = []
+cadeia_simbolos.append('A')
+cadeia_simbolos.append('B')
+cadeia_simbolos.append('a')
+producao = Producao(variavel, cadeia_simbolos) #cria a producao
 
 lista_producoes.append(producao) # add a producao na lista
 
 variavel = 'S'
-terminais = []
-terminais.append('b')
-producao = Producao(variavel, terminais) #cria a producao
+cadeia_simbolos = []
+cadeia_simbolos.append('b')
+producao = Producao(variavel, cadeia_simbolos) #cria a producao
 
 lista_producoes.append(producao) # add a producao na lista
 
 variavel = 'A'
-terminais = []
-terminais.append('a')
-producao = Producao(variavel, terminais) #cria a producao
+cadeia_simbolos = []
+cadeia_simbolos.append('a')
+producao = Producao(variavel, cadeia_simbolos) #cria a producao
 
 lista_producoes.append(producao) # add a producao na lista
 
 variavel = 'B'
-terminais = []
-terminais.append('b')
-producao = Producao(variavel, terminais) #cria a producao
+cadeia_simbolos = []
+cadeia_simbolos.append('b')
+producao = Producao(variavel, cadeia_simbolos) #cria a producao
 
 lista_producoes.append(producao)
 
 variavel = 'B'
-terminais = []
-terminais.append('V')
-producao = Producao(variavel, terminais) # add a producao na lista
+cadeia_simbolos = []
+cadeia_simbolos.append('V')
+producao = Producao(variavel, cadeia_simbolos) # add a producao na lista
 
 
 
